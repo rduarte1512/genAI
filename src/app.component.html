@@ -1,0 +1,1204 @@
+
+<div class="min-h-screen bg-zinc-950 text-white w-full">
+
+  @if (!isLoggedIn()) {
+    
+    @if (showLandingPage()) {
+      <!-- LANDING PAGE -->
+      <div class="min-h-screen flex flex-col bg-zinc-950 overflow-hidden relative">
+         <!-- Background Decor -->
+         <div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 rounded-full bg-indigo-500/20 blur-[128px]"></div>
+         <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-96 h-96 rounded-full bg-purple-500/20 blur-[128px]"></div>
+
+         <!-- Navbar -->
+         <header class="w-full max-w-7xl mx-auto p-6 flex justify-between items-center relative z-10">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                </svg>
+              </div>
+              <span class="font-bold text-xl tracking-tight">GenAI Studio</span>
+            </div>
+            <button (click)="enterAuth()" class="px-5 py-2 text-sm font-medium text-zinc-300 hover:text-white transition-colors">
+              Entrar
+            </button>
+         </header>
+
+         <!-- Hero Section -->
+         <main class="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-8 relative z-10 pt-10 pb-20">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+               <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+               Agora com geração de vídeo
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl font-bold tracking-tight mb-6 max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+               Transforme ideias em <br>
+               <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Arte Digital</span> com IA
+            </h1>
+
+            <p class="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
+               Crie imagens impressionantes e vídeos curtos em segundos usando o poder do GenAI. Sem necessidade de experiência em design.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
+               <button 
+                 (click)="enterAuth()"
+                 class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-full text-lg shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:scale-105"
+               >
+                 Começar Gratuitamente
+               </button>
+               <button 
+                 (click)="enterAuth()"
+                 class="px-8 py-4 bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-white font-semibold rounded-full text-lg transition-all"
+               >
+                 Ver Galeria
+               </button>
+            </div>
+
+            <!-- Feature Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 max-w-5xl w-full animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
+               
+               <div class="bg-zinc-900/50 border border-zinc-800 p-6 rounded-2xl text-left hover:border-indigo-500/50 transition-colors group">
+                  <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                      </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-2">Geração de Imagem</h3>
+                  <p class="text-zinc-400 text-sm">Crie visuais fotorrealistas ou artísticos com o modelo Imagen 3 de última geração.</p>
+               </div>
+
+               <div class="bg-zinc-900/50 border border-zinc-800 p-6 rounded-2xl text-left hover:border-purple-500/50 transition-colors group">
+                  <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4 group-hover:scale-110 transition-transform">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                      </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-2">Criação de Vídeo</h3>
+                  <p class="text-zinc-400 text-sm">Dê vida às suas ideias com vídeos curtos gerados pelo modelo Veo 2.0.</p>
+               </div>
+
+               <div class="bg-zinc-900/50 border border-zinc-800 p-6 rounded-2xl text-left hover:border-green-500/50 transition-colors group">
+                  <div class="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 mb-4 group-hover:scale-110 transition-transform">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                      </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-2">Organização Fácil</h3>
+                  <p class="text-zinc-400 text-sm">Guarde as suas criações em pastas personalizadas e mantenha o seu portefólio organizado.</p>
+               </div>
+
+            </div>
+         </main>
+
+         <footer class="p-6 text-center text-zinc-600 text-sm relative z-10">
+            &copy; 2024 GenAI Studio. Powered by GenAI.
+         </footer>
+      </div>
+
+    } @else {
+
+      <!-- AUTH SCREEN (Login/Register) - Centered Overlay -->
+      <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 max-w-6xl mx-auto w-full">
+        <div class="w-full max-w-md animate-in fade-in zoom-in duration-500">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-8 relative overflow-hidden">
+            
+            <!-- Background Decor -->
+            <div class="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-indigo-500/20 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-32 h-32 rounded-full bg-purple-500/20 blur-3xl"></div>
+
+            <div class="relative z-10 text-center">
+              <!-- Logo Icon -->
+              <div class="mx-auto w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                </svg>
+              </div>
+
+              <h1 class="text-2xl font-bold text-white mb-2">
+                {{ isLoginMode() ? 'Bem-vindo de volta' : 'Crie a sua conta' }}
+              </h1>
+              <p class="text-zinc-400 mb-8 text-sm">
+                {{ isLoginMode() ? 'Entre para continuar a criar com IA.' : 'Registe-se para começar a gerar imagens e vídeos.' }}
+              </p>
+
+              <div class="space-y-4 text-left">
+                
+                @if (!isLoginMode()) {
+                  <div class="animate-in slide-in-from-top-2 duration-300">
+                    <label for="signupName" class="block text-xs font-medium text-zinc-500 uppercase tracking-wider mb-1.5 ml-1">Nome Completo</label>
+                    <input 
+                      type="text" 
+                      id="signupName"
+                      [(ngModel)]="signupName"
+                      class="w-full bg-zinc-950/50 border border-zinc-700 rounded-lg p-3 text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                      placeholder="Seu Nome"
+                      autocomplete="name"
+                    >
+                  </div>
+                }
+
+                <div>
+                  <label for="email" class="block text-xs font-medium text-zinc-500 uppercase tracking-wider mb-1.5 ml-1">Email</label>
+                  <input 
+                    type="email" 
+                    id="email"
+                    [(ngModel)]="email"
+                    class="w-full bg-zinc-950/50 border border-zinc-700 rounded-lg p-3 text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                    placeholder="exemplo@email.com"
+                    autocomplete="email"
+                  >
+                </div>
+
+                <div>
+                  <label for="password" class="block text-xs font-medium text-zinc-500 uppercase tracking-wider mb-1.5 ml-1">Palavra-passe</label>
+                  <input 
+                    type="password" 
+                    id="password"
+                    [(ngModel)]="password"
+                    (keydown.enter)="onAuthAction()"
+                    class="w-full bg-zinc-950/50 border border-zinc-700 rounded-lg p-3 text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                    placeholder="••••••••"
+                    autocomplete="current-password"
+                  >
+                </div>
+
+                <button 
+                  (click)="onAuthAction()"
+                  class="w-full py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all shadow-lg shadow-indigo-500/25 active:scale-[0.98] mt-2"
+                >
+                  {{ isLoginMode() ? 'Iniciar Sessão' : 'Criar Conta' }}
+                </button>
+
+                @if (loginError()) {
+                  <p class="text-red-400 text-sm text-center animate-pulse pt-2">{{ loginError() }}</p>
+                }
+
+                <div class="text-center mt-6 pt-4 border-t border-zinc-800">
+                  <button 
+                    (click)="toggleAuthMode()" 
+                    class="text-sm text-zinc-400 hover:text-white transition-colors"
+                  >
+                    {{ isLoginMode() ? 'Não tem uma conta? ' : 'Já tem uma conta? ' }}
+                    <span class="text-indigo-400 hover:text-indigo-300 font-medium hover:underline">
+                      {{ isLoginMode() ? 'Registe-se agora' : 'Inicie sessão' }}
+                    </span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 flex flex-col items-center gap-3">
+            <p class="text-center text-zinc-600 text-xs">Powered by GenAI</p>
+          </div>
+
+        </div>
+      </div>
+    }
+
+  } @else {
+    <!-- MAIN APP LAYOUT (With Sidebar) -->
+    <div class="flex h-screen overflow-hidden">
+      
+      <!-- SIDEBAR -->
+      <aside 
+        class="fixed inset-y-0 left-0 z-40 w-64 bg-zinc-900 border-r border-zinc-800 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 flex flex-col"
+        [class.-translate-x-full]="!isSidebarOpen()"
+        [class.translate-x-0]="isSidebarOpen()"
+      >
+        <!-- Logo Area -->
+        <div class="p-6 border-b border-zinc-800 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-white">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+            </svg>
+          </div>
+          <span class="font-bold text-lg">GenAI Studio</span>
+        </div>
+
+        <!-- Folders List -->
+        <div class="flex-1 overflow-y-auto p-4 space-y-1">
+          <button 
+            (click)="selectFolder('all')"
+            class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+            [class.bg-zinc-800]="currentFolderId() === 'all'"
+            [class.text-white]="currentFolderId() === 'all'"
+            [class.text-zinc-400]="currentFolderId() !== 'all'"
+            [class.hover:bg-zinc-800]="currentFolderId() !== 'all'"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+            </svg>
+            Todas as Criações
+          </button>
+
+          <div class="pt-4 pb-2 px-3 flex items-center justify-between text-xs font-semibold text-zinc-500 uppercase tracking-wider">
+            <span>As Minhas Pastas</span>
+            <button (click)="createFolder()" class="hover:text-white transition-colors" title="Nova Pasta">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+          </div>
+
+          @for (folder of folders(); track folder.id) {
+            <div class="group relative flex items-center">
+              <button 
+                (click)="selectFolder(folder.id)"
+                class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors text-left"
+                [class.bg-zinc-800]="currentFolderId() === folder.id"
+                [class.text-white]="currentFolderId() === folder.id"
+                [class.text-zinc-400]="currentFolderId() !== folder.id"
+                [class.hover:bg-zinc-800]="currentFolderId() !== folder.id"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 flex-shrink-0" [class.text-red-500]="folder.name === 'Favoritos'">
+                  @if (folder.name === 'Favoritos') {
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                  } @else {
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                  }
+                </svg>
+                <span class="truncate">{{ folder.name }}</span>
+              </button>
+              
+              @if (folder.name !== 'Favoritos') {
+                 <button 
+                   (click)="deleteFolder(folder.id, $event)"
+                   class="absolute right-2 p-1 rounded hover:bg-zinc-700 text-zinc-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                   title="Apagar Pasta"
+                 >
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                   </svg>
+                 </button>
+              }
+            </div>
+          }
+
+          <!-- RECENT HISTORY SECTION -->
+          <div class="pt-6 mt-2 border-t border-zinc-800">
+             <h3 class="px-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">Histórico Recente</h3>
+             <div class="space-y-1">
+               @for (item of recentHistory(); track item.id) {
+                 <button (click)="selectHistoryItem(item)" class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-xs hover:bg-zinc-800 transition-colors text-left group">
+                   <!-- Thumbnail/Icon -->
+                   <div class="w-6 h-6 rounded bg-zinc-800 flex-shrink-0 overflow-hidden border border-zinc-700 relative">
+                      @if (item.type === 'image') {
+                        <img [src]="item.url" class="w-full h-full object-cover">
+                      } @else {
+                        <div class="w-full h-full flex items-center justify-center text-zinc-500 bg-black">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3">
+                             <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                           </svg>
+                        </div>
+                      }
+                   </div>
+                   <span class="text-zinc-400 group-hover:text-zinc-200 truncate flex-1">{{ item.prompt }}</span>
+                 </button>
+               }
+               @if (history().length === 0) {
+                 <div class="px-3 text-xs text-zinc-600 italic">Nada aqui ainda...</div>
+               }
+             </div>
+          </div>
+        </div>
+
+        <div class="p-4 border-t border-zinc-800">
+           <button (click)="onLogout()" class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+               </svg>
+              Sair
+           </button>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT AREA -->
+      <div class="flex-1 flex flex-col h-full overflow-y-auto w-full">
+        
+        <!-- Header -->
+        <header class="sticky top-0 z-30 bg-zinc-950/90 backdrop-blur-sm border-b border-zinc-800 px-4 md:px-8 py-4 flex items-center justify-between">
+           <div class="flex items-center gap-4">
+             <button (click)="toggleSidebar()" class="md:hidden text-zinc-400 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+             </button>
+             <div>
+                <h1 class="text-xl font-bold text-white">{{ activeTab() === 'studio' ? 'Estúdio Criativo' : 'Planos & Preços' }}</h1>
+             </div>
+           </div>
+
+           <div class="flex items-center gap-4">
+              <!-- Navigation Tabs -->
+              <nav class="hidden md:flex bg-zinc-900 p-1 rounded-lg border border-zinc-800">
+                <button 
+                  (click)="activeTab.set('studio')" 
+                  class="px-4 py-1.5 rounded-md text-sm font-medium transition-all"
+                  [class.bg-zinc-800]="activeTab() === 'studio'"
+                  [class.text-white]="activeTab() === 'studio'"
+                  [class.text-zinc-400]="activeTab() !== 'studio'"
+                >
+                  Estúdio
+                </button>
+                <button 
+                  (click)="activeTab.set('plans')" 
+                  class="px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2"
+                  [class.bg-zinc-800]="activeTab() === 'plans'"
+                  [class.text-white]="activeTab() === 'plans'"
+                  [class.text-zinc-400]="activeTab() !== 'plans'"
+                >
+                  Subscrição
+                  @if (currentTier() === 'free') {
+                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                  }
+                </button>
+              </nav>
+
+              <!-- Credit Badge -->
+              <div class="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-full" title="Seus Créditos">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-yellow-500">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.732 6.232a2.5 2.5 0 013.536 0 .75.75 0 101.06-1.06A4 4 0 006.5 8v.165c0 .364.034.728.1 1.085h-.35a.75.75 0 000 1.5h.737a5.25 5.25 0 01-.367 3.072l-.055.16a.75.75 0 001.414.486l.055-.16a3.75 3.75 0 00.25-2.058h1.432a.75.75 0 000-1.5h-2.006a2.5 2.5 0 011.97-3.418zM10 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-bold text-white">{{ credits() }}</span>
+                <button (click)="activeTab.set('plans')" class="ml-1 text-xs bg-indigo-600 hover:bg-indigo-500 text-white px-1.5 py-0.5 rounded transition-colors">+</button>
+              </div>
+           </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <div class="flex-1 overflow-y-auto p-4 md:p-8">
+            <div class="max-w-4xl mx-auto">
+              
+              @if (activeTab() === 'studio') {
+                <!-- STUDIO TAB -->
+                
+                <!-- Generator Box -->
+                <main class="w-full bg-zinc-900 border border-zinc-800 rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm relative mb-12 animate-in fade-in duration-300">
+                  
+                  <!-- Loading Overlay -->
+                  @if (isLoading()) {
+                    <div class="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm z-20 flex flex-col items-center justify-center p-6 text-center animate-in fade-in duration-300">
+                      <div class="relative w-16 h-16 mb-6">
+                        <div class="absolute inset-0 rounded-full border-4 border-zinc-800"></div>
+                        <div class="absolute inset-0 rounded-full border-4 border-indigo-500 border-t-transparent animate-spin"></div>
+                      </div>
+                      <p class="text-lg font-medium text-white mb-2">{{ statusMessage() }}</p>
+                      <p class="text-sm text-zinc-400">A magia da IA está a acontecer...</p>
+                    </div>
+                  }
+
+                  <!-- Content -->
+                  <div class="p-6 sm:p-8">
+                    
+                    <!-- Type Selector -->
+                    <div class="flex p-1 bg-zinc-950 rounded-xl mb-6 border border-zinc-800">
+                      <button 
+                        (click)="setMediaType('image')"
+                        class="flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                        [class.bg-zinc-800]="mediaType() === 'image'"
+                        [class.text-white]="mediaType() === 'image'"
+                        [class.text-zinc-500]="mediaType() !== 'image'"
+                        [class.shadow-md]="mediaType() === 'image'"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                        </svg>
+                        Imagem
+                      </button>
+                      <button 
+                        (click)="setMediaType('video')"
+                        class="flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                        [class.bg-zinc-800]="mediaType() === 'video'"
+                        [class.text-white]="mediaType() === 'video'"
+                        [class.text-zinc-500]="mediaType() !== 'video'"
+                        [class.shadow-md]="mediaType() === 'video'"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                        Vídeo
+                      </button>
+                    </div>
+
+                    <!-- Prompt Input -->
+                    <div class="mb-2">
+                      <div class="flex justify-between items-center mb-2">
+                        <label for="prompt" class="block text-sm font-medium text-zinc-400">
+                          O que você quer criar?
+                        </label>
+                        <span class="text-xs font-mono text-zinc-500 bg-zinc-950 px-2 py-0.5 rounded border border-zinc-800">
+                          Custo: {{ costDisplay() }}
+                        </span>
+                      </div>
+                      <div class="relative">
+                        <textarea
+                          id="prompt"
+                          [(ngModel)]="prompt"
+                          rows="3"
+                          class="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all resize-none text-base"
+                          [placeholder]="mediaType() === 'image' ? 'Um astronauta a cavalgar num cavalo em Marte, estilo cyberpunk...' : 'Um drone a voar sobre uma floresta tropical futurista ao pôr do sol...'"
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <!-- Prompt Assistant -->
+                    <div class="mb-6">
+                      <button 
+                        (click)="toggleAssistant()"
+                        class="text-xs font-medium flex items-center gap-1.5 transition-colors"
+                        [class.text-indigo-400]="showPromptAssistant()"
+                        [class.text-zinc-500]="!showPromptAssistant()"
+                        [class.hover:text-indigo-300]="!showPromptAssistant()"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                          <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                        </svg>
+                        {{ showPromptAssistant() ? 'Ocultar Assistente' : '✨ Assistente de Prompt' }}
+                      </button>
+
+                      @if (showPromptAssistant()) {
+                        <div class="mt-3 bg-zinc-950/50 border border-zinc-800 rounded-xl p-4 animate-in fade-in slide-in-from-top-2">
+                          <div class="space-y-4">
+                            <!-- Helper Tags Loops -->
+                            @for (category of [
+                                { name: 'Estilo', items: promptCategories.styles, color: 'border-zinc-700' },
+                                { name: 'Iluminação', items: promptCategories.lighting, color: 'hover:border-yellow-500/50' },
+                                { name: 'Câmera', items: promptCategories.camera, color: 'hover:border-blue-500/50' },
+                                { name: 'Vibe', items: promptCategories.mood, color: 'hover:border-purple-500/50' }
+                              ]; track category.name) {
+                              <div>
+                                <h4 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">{{ category.name }}</h4>
+                                <div class="flex flex-wrap gap-2">
+                                  @for (tag of category.items; track tag) {
+                                    <button 
+                                      (click)="appendTag(tag)"
+                                      class="px-2.5 py-1 rounded-full text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white hover:bg-zinc-800 transition-all active:scale-95"
+                                      [class]="category.color"
+                                    >
+                                      {{ tag }}
+                                    </button>
+                                  }
+                                </div>
+                              </div>
+                            }
+                          </div>
+                        </div>
+                      }
+                    </div>
+
+                    <!-- Action Button -->
+                    <button
+                      (click)="onGenerate()"
+                      [disabled]="!isFormValid || isLoading()"
+                      class="w-full py-3 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-2 group"
+                    >
+                      @if (!isLoading()) {
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 group-hover:scale-110 transition-transform">
+                          <path d="M15.98 1.804a1 1 0 00-1.96 0l-.24 1.192a1 1 0 01-.784.785l-1.192.238a1 1 0 000 1.962l1.192.238a1 1 0 01.785.785l.238 1.192a1 1 0 001.962 0l.238-1.192a1 1 0 01.785-.785l1.192-.238a1 1 0 000-1.962l-1.192-.238a1 1 0 01-.785-.785l-.238-1.192zM6.949 5.684a1 1 0 00-1.898 0l-.683 5.684a1 1 0 01-.818.818l-5.684.683a1 1 0 000 1.898l5.684.683a1 1 0 01.818.818l.683 5.684a1 1 0 001.898 0l.683-5.684a1 1 0 01.818-.818l5.684-.683a1 1 0 000-1.898l-5.684-.683a1 1 0 01-.818-.818l-.683-5.684z" />
+                        </svg>
+                        Gerar {{ mediaType() === 'image' ? 'Imagem' : 'Vídeo' }} 
+                      } @else {
+                        Gerando...
+                      }
+                    </button>
+
+                    <!-- Error Message -->
+                    @if (error()) {
+                      <div class="mt-4 p-4 rounded-lg bg-red-900/20 border border-red-500/30 text-red-200 text-sm flex flex-col sm:flex-row items-start gap-3 animate-in slide-in-from-top-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 flex-shrink-0 mt-0.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                        </svg>
+                        <div>
+                          <p class="font-medium">Erro na geração</p>
+                          <p class="opacity-80">{{ error() }}</p>
+                          @if (credits() < 10) {
+                            <button (click)="activeTab.set('plans')" class="mt-2 text-indigo-300 hover:text-white underline text-xs">
+                                Obter mais créditos
+                            </button>
+                          }
+                        </div>
+                      </div>
+                    }
+                  </div>
+                </main>
+
+                <!-- Current Result Section -->
+                @if (generatedUrl()) {
+                  <section class="mb-12 animate-in fade-in slide-in-from-bottom-8 duration-500">
+                    <div class="relative group rounded-2xl overflow-hidden shadow-2xl bg-zinc-900 border border-zinc-800">
+                      
+                      <!-- Header for result (Only visible when NOT editing) -->
+                      @if (!isEditing()) {
+                        <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/60 to-transparent z-10 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          <span class="text-xs font-mono text-white/80 bg-black/40 px-2 py-1 rounded backdrop-blur-md border border-white/10">
+                            {{ mediaType() === 'image' ? 'IMAGEN 3' : 'VEO 2.0' }}
+                          </span>
+                          
+                          <div class="flex items-center gap-2">
+                            <!-- Edit Button -->
+                            <button 
+                              (click)="toggleEditor()"
+                              class="flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-md transition-all text-xs font-medium"
+                              [class.bg-white-10]="currentTier() !== 'free'"
+                              [class.hover-bg-white-20]="currentTier() !== 'free'"
+                              [class.text-white]="currentTier() !== 'free'"
+                              [class.bg-zinc-800]="currentTier() === 'free'"
+                              [class.text-zinc-400]="currentTier() === 'free'"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3">
+                                  <path d="M5.433 13.917l1.262-3.155A4 4 0 017.58 9.42l6.92-6.918a2.121 2.121 0 013 3l-6.92 6.918c-.383.383-.84.685-1.343.886l-3.154 1.262a.5.5 0 01-.65-.65z" />
+                                  <path d="M3.5 5.75c0-.69.56-1.25 1.25-1.25H10A.75.75 0 0010 3H4.75A2.75 2.75 0 002 5.75v9.5A2.75 2.75 0 004.75 18h9.5A2.75 2.75 0 0017 15.25V10a.75.75 0 00-1.5 0v5.25c0 .69-.56 1.25-1.25 1.25h-9.5c-.69 0-1.25-.56-1.25-1.25v-9.5z" />
+                                </svg>
+                                {{ currentTier() === 'free' ? 'Editar (Premium)' : 'Editar Mídia' }}
+                            </button>
+
+                            <a 
+                              [href]="generatedUrl()" 
+                              [download]="mediaType() === 'image' ? 'imagem-gerada.jpg' : 'video-gerado.mp4'"
+                              class="p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white transition-colors"
+                              title="Baixar Original"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      }
+
+                      <!-- The Media (Normal View) -->
+                      @if (!isEditing()) {
+                        @if (mediaType() === 'image') {
+                          <img 
+                            [src]="generatedUrl()" 
+                            alt="Imagem Gerada pela IA" 
+                            class="w-full h-auto object-cover"
+                          >
+                        } @else {
+                          <video 
+                            [src]="generatedUrl()" 
+                            controls 
+                            autoplay
+                            loop
+                            class="w-full h-auto aspect-video bg-black"
+                          ></video>
+                        }
+                      } @else {
+                        <!-- EDITOR VIEW -->
+                        <div class="bg-zinc-950 p-4">
+                          <div class="relative w-full overflow-hidden rounded-lg border border-zinc-800 bg-black/50 flex justify-center items-center" style="min-height: 300px;">
+                             <!-- Preview with Filters applied via style -->
+                             @if (mediaType() === 'image') {
+                                <img 
+                                  #imagePreview
+                                  [src]="generatedUrl()" 
+                                  class="max-w-full max-h-[60vh] object-contain transition-all duration-100"
+                                  [style.filter]="filterStyle()"
+                                  crossorigin="anonymous"
+                                >
+                             } @else {
+                                <video 
+                                  [src]="generatedUrl()" 
+                                  controls
+                                  loop
+                                  autoplay
+                                  class="max-w-full max-h-[60vh] aspect-video transition-all duration-100"
+                                  [style.filter]="filterStyle()"
+                                ></video>
+                             }
+                          </div>
+
+                          <!-- Editor Controls -->
+                          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- Brightness -->
+                            <div>
+                               <div class="flex justify-between text-xs text-zinc-400 mb-1">
+                                 <span>Brilho</span>
+                                 <span>{{ editConfig().brightness }}%</span>
+                               </div>
+                               <input type="range" min="0" max="200" [value]="editConfig().brightness" (input)="updateEditConfig('brightness', $event)" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+                            </div>
+                            <!-- Contrast -->
+                            <div>
+                               <div class="flex justify-between text-xs text-zinc-400 mb-1">
+                                 <span>Contraste</span>
+                                 <span>{{ editConfig().contrast }}%</span>
+                               </div>
+                               <input type="range" min="0" max="200" [value]="editConfig().contrast" (input)="updateEditConfig('contrast', $event)" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+                            </div>
+                            <!-- Saturation -->
+                            <div>
+                               <div class="flex justify-between text-xs text-zinc-400 mb-1">
+                                 <span>Saturação</span>
+                                 <span>{{ editConfig().saturate }}%</span>
+                               </div>
+                               <input type="range" min="0" max="200" [value]="editConfig().saturate" (input)="updateEditConfig('saturate', $event)" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+                            </div>
+                             <!-- Grayscale -->
+                            <div>
+                               <div class="flex justify-between text-xs text-zinc-400 mb-1">
+                                 <span>P&B</span>
+                                 <span>{{ editConfig().grayscale }}%</span>
+                               </div>
+                               <input type="range" min="0" max="100" [value]="editConfig().grayscale" (input)="updateEditConfig('grayscale', $event)" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+                            </div>
+                             <!-- Sepia -->
+                             <div>
+                               <div class="flex justify-between text-xs text-zinc-400 mb-1">
+                                 <span>Sépia</span>
+                                 <span>{{ editConfig().sepia }}%</span>
+                               </div>
+                               <input type="range" min="0" max="100" [value]="editConfig().sepia" (input)="updateEditConfig('sepia', $event)" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+                            </div>
+                          </div>
+
+                          <!-- Editor Actions -->
+                          <div class="mt-6 flex justify-end gap-3 pt-4 border-t border-zinc-800">
+                            <button 
+                              (click)="toggleEditor()"
+                              class="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                            >
+                              Cancelar
+                            </button>
+                            <button 
+                              (click)="downloadEditedImage()"
+                              class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-lg shadow-lg shadow-indigo-500/20 transition-all flex items-center gap-2"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                                <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.965 3.129V2.75z" />
+                                <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" />
+                              </svg>
+                              Baixar Editado
+                            </button>
+                          </div>
+                        </div>
+                      }
+                    </div>
+                    
+                    <!-- Prompt Caption (Hidden while editing to save space) -->
+                    @if (!isEditing()) {
+                      <div class="mt-4 px-2 text-center">
+                        <p class="text-sm text-zinc-500 font-medium uppercase tracking-wider mb-1">Prompt Usado</p>
+                        <p class="text-zinc-300 italic">"{{ prompt() }}"</p>
+                      </div>
+                    }
+                  </section>
+                }
+
+                <!-- History Section (Now filtered by Folder) -->
+                @if (filteredHistory().length > 0) {
+                  <section class="pt-8 border-t border-zinc-800 animate-in fade-in duration-500 delay-150">
+                    <div class="flex items-center gap-3 mb-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-indigo-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                      </svg>
+                      <h2 class="text-xl font-semibold text-white">
+                        {{ getFolderName(currentFolderId()) }}
+                        <span class="text-zinc-500 text-sm font-normal ml-2">({{ filteredHistory().length }} itens)</span>
+                      </h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                      @for (item of filteredHistory(); track item.id) {
+                        <div class="group relative aspect-video bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800 hover:border-indigo-500 hover:ring-2 hover:ring-indigo-500/20 transition-all text-left w-full">
+                          
+                          <!-- Click on Image to load in editor/preview -->
+                          <button (click)="selectHistoryItem(item)" class="w-full h-full absolute inset-0 z-0">
+                            <!-- Media Preview -->
+                            @if (item.type === 'image') {
+                              <img [src]="item.url" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Histórico">
+                            } @else {
+                              <video [src]="item.url" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" muted preload="metadata"></video>
+                              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div class="bg-black/50 p-1.5 rounded-full backdrop-blur-sm">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-white">
+                                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                                  </svg>
+                                </div>
+                              </div>
+                            }
+                          </button>
+
+                          <!-- Move Folder & Delete Button (Top Left) -->
+                          <div class="absolute top-2 left-2 z-10 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button 
+                              (click)="toggleMoveMenu(item.id, $event)"
+                              class="p-1.5 rounded bg-black/60 hover:bg-indigo-600 backdrop-blur-sm text-white border border-white/10 transition-colors"
+                              title="Mover para Pasta"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                              </svg>
+                            </button>
+
+                            <button 
+                              (click)="deleteItem(item, $event)"
+                              class="p-1.5 rounded bg-black/60 hover:bg-red-600 backdrop-blur-sm text-white border border-white/10 transition-colors"
+                              title="Eliminar"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                              </svg>
+                            </button>
+
+                            <!-- Dropdown Menu -->
+                            @if (movingItemId() === item.id) {
+                              <div class="absolute top-full left-0 mt-1 w-40 bg-zinc-900 border border-zinc-700 rounded-lg shadow-xl overflow-hidden z-20 flex flex-col py-1 animate-in fade-in zoom-in duration-200">
+                                <button (click)="moveItemToFolder(item, 'all')" class="px-3 py-2 text-xs text-left text-zinc-300 hover:bg-zinc-800 hover:text-white truncate">
+                                  Todas (Remover)
+                                </button>
+                                @for (folder of folders(); track folder.id) {
+                                  <button (click)="moveItemToFolder(item, folder.id)" class="px-3 py-2 text-xs text-left text-zinc-300 hover:bg-zinc-800 hover:text-white truncate flex items-center gap-2">
+                                     @if (folder.name === 'Favoritos') { <span class="text-red-500">♥</span> }
+                                     {{ folder.name }}
+                                  </button>
+                                }
+                              </div>
+                            }
+                          </div>
+                          
+                          <!-- Cost Badge -->
+                          <div class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-sm text-[10px] font-mono text-yellow-400 border border-white/10 pointer-events-none">
+                            -{{ item.cost }}
+                          </div>
+
+                          <!-- Prompt Overlay (Bottom) -->
+                          <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex flex-col justify-end pointer-events-none">
+                            <p class="text-xs text-white line-clamp-2 leading-tight">
+                              {{ item.prompt }}
+                            </p>
+                          </div>
+                        </div>
+                      }
+                    </div>
+                  </section>
+                } @else {
+                  <!-- Empty State -->
+                  <div class="pt-12 text-center opacity-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto mb-3 text-zinc-600">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                    </svg>
+                    <p class="text-zinc-400">Nenhuma criação nesta pasta ainda.</p>
+                  </div>
+                }
+
+              } @else if (activeTab() === 'plans') {
+                <!-- PLANS TAB -->
+                <main class="w-full animate-in fade-in slide-in-from-bottom-8 duration-500">
+                  
+                  <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-white mb-3">Escolha o plano ideal para a sua criatividade</h2>
+                    <p class="text-zinc-400 max-w-lg mx-auto">Desbloqueie mais créditos, velocidades mais rápidas e recursos exclusivos.</p>
+                  </div>
+
+                  <!-- Subscriptions Grid -->
+                  <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+                    @for (plan of plans; track plan.id) {
+                      <div 
+                        class="relative rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col"
+                        [class.border-indigo-500]="plan.popular"
+                        [class.border-zinc-800]="!plan.popular"
+                        [class.shadow-2xl]="plan.popular"
+                        [class.shadow-indigo-500/10]="plan.popular"
+                        [class.bg-zinc-900]="true"
+                        [class.scale-105]="plan.popular"
+                      >
+                        @if (plan.popular) {
+                          <div class="absolute top-0 inset-x-0 h-1 bg-indigo-500"></div>
+                          <div class="absolute top-4 right-4 bg-indigo-500 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                            Popular
+                          </div>
+                        }
+
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                          <h3 class="text-xl font-semibold text-white mb-2">{{ plan.name }}</h3>
+                          <div class="flex items-baseline gap-1 mb-6">
+                            <span class="text-3xl font-bold text-white">{{ plan.price }}</span>
+                            @if (plan.id !== 'free') {
+                              <span class="text-sm text-zinc-500">/mês</span>
+                            }
+                          </div>
+
+                          <div class="mb-6 p-4 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.732 6.232a2.5 2.5 0 013.536 0 .75.75 0 101.06-1.06A4 4 0 006.5 8v.165c0 .364.034.728.1 1.085h-.35a.75.75 0 000 1.5h.737a5.25 5.25 0 01-.367 3.072l-.055.16a.75.75 0 001.414.486l.055-.16a3.75 3.75 0 00.25-2.058h1.432a.75.75 0 000-1.5h-2.006a2.5 2.5 0 011.97-3.418zM10 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd" />
+                              </svg>
+                            </div>
+                            <div>
+                               <span class="block text-xl font-bold text-white">{{ plan.credits }}</span>
+                               <span class="text-xs text-zinc-400">Créditos mensais</span>
+                            </div>
+                          </div>
+
+                          <ul class="space-y-3 mb-8 flex-1">
+                            @for (feature of plan.features; track $index) {
+                              <li class="flex items-start gap-3 text-sm text-zinc-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-indigo-400 flex-shrink-0">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                {{ feature }}
+                              </li>
+                            }
+                          </ul>
+
+                          <button 
+                            (click)="openCheckoutForPlan(plan)"
+                            class="w-full py-3 rounded-xl font-semibold transition-all shadow-lg active:scale-[0.98]"
+                            [class.bg-zinc-800]="plan.id === 'free'"
+                            [class.text-white]="plan.id === 'free'"
+                            [class.hover:bg-zinc-700]="plan.id === 'free'"
+                            [class.bg-indigo-600]="plan.id !== 'free'"
+                            [class.hover:bg-indigo-500]="plan.id !== 'free'"
+                            [class.shadow-indigo-500/20]="plan.id !== 'free'"
+                          >
+                            {{ plan.id === currentTier() ? 'Plano Atual' : (plan.id === 'free' ? 'Voltar ao Grátis' : 'Subscrever') }}
+                          </button>
+                        </div>
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Credit Packs Divider -->
+                  <div class="mb-10 text-center border-t border-zinc-800 pt-10">
+                    <h3 class="text-2xl font-bold text-white mb-2">Precisa de créditos extra?</h3>
+                    <p class="text-zinc-400">Compre pacotes individuais sem alterar a sua subscrição mensal.</p>
+                  </div>
+
+                  <!-- Credit Packs Grid -->
+                  <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    @for (pack of creditPacks; track pack.id) {
+                      <div 
+                        class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col relative overflow-hidden group hover:border-indigo-500/50 transition-colors"
+                      >
+                        @if (pack.popular) {
+                          <div class="absolute -right-6 top-4 bg-indigo-600 text-white text-[10px] font-bold px-8 py-1 rotate-45 shadow-lg">
+                            HOT
+                          </div>
+                        }
+
+                        <div class="flex items-center gap-4 mb-4">
+                          <div class="w-12 h-12 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-yellow-500">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.732 6.232a2.5 2.5 0 013.536 0 .75.75 0 101.06-1.06A4 4 0 006.5 8v.165c0 .364.034.728.1 1.085h-.35a.75.75 0 000 1.5h.737a5.25 5.25 0 01-.367 3.072l-.055.16a.75.75 0 001.414.486l.055-.16a3.75 3.75 0 00.25-2.058h1.432a.75.75 0 000-1.5h-2.006a2.5 2.5 0 011.97-3.418zM10 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h4 class="text-white font-semibold">{{ pack.name }}</h4>
+                            <p class="text-indigo-400 font-bold text-sm">+{{ pack.credits }} Créditos</p>
+                          </div>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-zinc-800/50">
+                           <span class="text-xl font-bold text-white">{{ pack.price }}</span>
+                           <button 
+                             (click)="openCheckoutForPack(pack)"
+                             class="px-4 py-2 bg-white text-black hover:bg-zinc-200 text-sm font-semibold rounded-lg transition-colors"
+                           >
+                             Comprar
+                           </button>
+                        </div>
+                      </div>
+                    }
+                  </div>
+
+                </main>
+              }
+            </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- CHECKOUT SCREEN (FULL SCREEN) -->
+  @if (showCheckout()) {
+    <div class="fixed inset-0 z-50 bg-zinc-950 flex flex-col md:flex-row h-screen w-screen overflow-hidden animate-in fade-in duration-300">
+        
+        <!-- Left Side: Payment Form -->
+        <div class="flex-1 p-8 md:p-12 overflow-y-auto relative">
+           <!-- Close Button -->
+           <button (click)="closeCheckout()" class="absolute top-6 left-6 text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+              Voltar
+           </button>
+
+           <div class="max-w-2xl mx-auto mt-12">
+             <div class="flex items-center gap-3 mb-8">
+               <div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-500">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                   <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" />
+                 </svg>
+               </div>
+               <div>
+                 <h2 class="text-2xl font-bold text-white">Pagamento Seguro</h2>
+                 <p class="text-sm text-zinc-400">Complete a sua compra para começar a criar.</p>
+               </div>
+             </div>
+
+             <!-- Payment Methods -->
+             <div class="grid grid-cols-3 gap-4 mb-8">
+               <button 
+                 (click)="paymentMethod.set('card')"
+                 class="relative h-20 rounded-2xl border flex flex-col items-center justify-center transition-all duration-200 group"
+                 [class.border-indigo-500]="paymentMethod() === 'card'"
+                 [class.bg-indigo-500/5]="paymentMethod() === 'card'"
+                 [class.border-zinc-800]="paymentMethod() !== 'card'"
+                 [class.bg-zinc-900]="paymentMethod() !== 'card'"
+                 [class.hover:border-zinc-700]="paymentMethod() !== 'card'"
+               >
+                  @if(paymentMethod() === 'card') {
+                    <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-indigo-500"></div>
+                  }
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mb-1 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                  </svg>
+                  <span class="text-xs font-medium text-zinc-300 group-hover:text-white">Cartão</span>
+               </button>
+
+               <button 
+                 (click)="paymentMethod.set('paypal')"
+                 class="relative h-20 rounded-2xl border flex flex-col items-center justify-center transition-all duration-200 group"
+                 [class.border-indigo-500]="paymentMethod() === 'paypal'"
+                 [class.bg-indigo-500/5]="paymentMethod() === 'paypal'"
+                 [class.border-zinc-800]="paymentMethod() !== 'paypal'"
+                 [class.bg-zinc-900]="paymentMethod() !== 'paypal'"
+                 [class.hover:border-zinc-700]="paymentMethod() !== 'paypal'"
+               >
+                  @if(paymentMethod() === 'paypal') {
+                    <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-indigo-500"></div>
+                  }
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mb-1 text-blue-400">
+                    <path d="M20.067 8.478c.969-.385 1.751-1.047 2.348-1.986.596-.939.894-2.029.894-3.269V3.22H11.085L7.042 22.845h4.632l.789-4.888h2.365c2.723 0 4.889-1.325 5.239-5.479zM12.923 6.136h2.956c1.238 0 2.24.428 2.656 1.764.416 1.336.037 3.328-1.597 3.328h-2.31l-1.705-5.092z"/>
+                  </svg>
+                  <span class="text-xs font-medium text-zinc-300 group-hover:text-white">PayPal</span>
+               </button>
+
+               <button 
+                 (click)="paymentMethod.set('revolut')"
+                 class="relative h-20 rounded-2xl border flex flex-col items-center justify-center transition-all duration-200 group"
+                 [class.border-indigo-500]="paymentMethod() === 'revolut'"
+                 [class.bg-indigo-500/5]="paymentMethod() === 'revolut'"
+                 [class.border-zinc-800]="paymentMethod() !== 'revolut'"
+                 [class.bg-zinc-900]="paymentMethod() !== 'revolut'"
+                 [class.hover:border-zinc-700]="paymentMethod() !== 'revolut'"
+               >
+                  @if(paymentMethod() === 'revolut') {
+                    <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-indigo-500"></div>
+                  }
+                  <span class="w-6 h-6 mb-1 text-white font-bold text-lg font-mono flex items-center justify-center rounded bg-black">R</span>
+                  <span class="text-xs font-medium text-zinc-300 group-hover:text-white">Revolut</span>
+               </button>
+             </div>
+
+             <!-- Card Form -->
+             @if (paymentMethod() === 'card') {
+               <div class="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
+                  <div>
+                     <label class="block text-xs font-medium text-zinc-400 uppercase tracking-wider mb-2">Nome no Cartão</label>
+                     <input 
+                       type="text" 
+                       placeholder="João Silva" 
+                       [(ngModel)]="cardName"
+                       class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all shadow-sm"
+                     >
+                  </div>
+                  <div>
+                     <label class="block text-xs font-medium text-zinc-400 uppercase tracking-wider mb-2">Número do Cartão</label>
+                     <div class="relative">
+                       <input 
+                         type="text" 
+                         placeholder="0000 0000 0000 0000" 
+                         [(ngModel)]="cardNumber"
+                         class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-4 pl-12 text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all shadow-sm font-mono"
+                       >
+                       <div class="absolute left-4 top-4 text-zinc-500">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                         </svg>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-6">
+                    <div>
+                      <label class="block text-xs font-medium text-zinc-400 uppercase tracking-wider mb-2">Validade</label>
+                      <input 
+                        type="text" 
+                        placeholder="MM/AA" 
+                        [(ngModel)]="cardExpiry"
+                        class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all shadow-sm text-center font-mono"
+                      >
+                    </div>
+                    <div>
+                      <label class="block text-xs font-medium text-zinc-400 uppercase tracking-wider mb-2">CVC</label>
+                      <input 
+                        type="text" 
+                        placeholder="123" 
+                        [(ngModel)]="cardCvc"
+                        class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all shadow-sm text-center font-mono"
+                      >
+                    </div>
+                  </div>
+               </div>
+             } @else {
+               <div class="py-12 text-center text-zinc-400 bg-zinc-900/50 rounded-2xl border border-dashed border-zinc-800 animate-in fade-in">
+                  <p class="mb-2">Será redirecionado para o ambiente seguro do {{ paymentMethod() === 'paypal' ? 'PayPal' : 'Revolut' }}.</p>
+                  <p class="text-xs text-zinc-500">A sua compra será processada instantaneamente.</p>
+               </div>
+             }
+
+             <div class="mt-8 flex items-center justify-between pt-6 border-t border-zinc-900">
+               <div class="flex items-center gap-2 text-xs text-green-500 bg-green-500/10 px-3 py-1.5 rounded-full">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3">
+                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                 </svg>
+                 Pagamento Encriptado SSL 256-bit
+               </div>
+               <span class="text-xs text-zinc-600">GenAI Studio Inc. &copy; 2024</span>
+             </div>
+           </div>
+        </div>
+
+        <!-- Right Side: Order Summary -->
+        <div class="w-full md:w-1/3 lg:w-1/4 bg-zinc-900 border-l border-zinc-800 p-8 flex flex-col shadow-2xl relative z-10">
+           <div class="flex items-center justify-between mb-8">
+             <h3 class="text-sm font-bold text-zinc-400 uppercase tracking-wider">Resumo do Pedido</h3>
+             <button (click)="closeCheckout()" class="md:hidden text-zinc-500">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+               </svg>
+             </button>
+           </div>
+           
+           @if (checkoutItem(); as item) {
+             <div class="flex-1 flex flex-col">
+               <div class="bg-zinc-950 rounded-2xl p-6 border border-zinc-800 mb-6 shadow-inner">
+                 <div class="flex justify-between items-start mb-2">
+                   <div>
+                     <h4 class="text-lg font-bold text-white">{{ item.name }}</h4>
+                     <p class="text-xs text-zinc-500 mt-1">{{ item.description }}</p>
+                   </div>
+                 </div>
+                 <div class="mt-4 pt-4 border-t border-zinc-900 flex justify-between items-end">
+                    <span class="text-3xl font-bold text-white">{{ item.price }}</span>
+                    @if(item.type === 'plan') {
+                      <span class="text-xs text-zinc-500 mb-1">/mês</span>
+                    }
+                 </div>
+               </div>
+               
+               <div class="space-y-3 mb-8">
+                 <div class="flex justify-between items-center text-sm">
+                   <span class="text-zinc-400">Subtotal</span>
+                   <span class="text-zinc-200">{{ item.price }}</span>
+                 </div>
+                 <div class="flex justify-between items-center text-sm">
+                   <span class="text-zinc-400">Impostos (IVA 0%)</span>
+                   <span class="text-zinc-200">0.00€</span>
+                 </div>
+                 <div class="flex justify-between items-center text-lg font-bold text-white pt-4 border-t border-zinc-800 mt-2">
+                   <span>Total</span>
+                   <span>{{ item.price }}</span>
+                 </div>
+               </div>
+
+               <div class="mt-auto">
+                 <div class="flex items-center gap-2 mb-4 justify-center">
+                    <div class="flex -space-x-2">
+                      <div class="w-6 h-6 rounded-full bg-zinc-800 border border-zinc-900 flex items-center justify-center text-[8px] text-zinc-500 font-bold">V</div>
+                      <div class="w-6 h-6 rounded-full bg-zinc-800 border border-zinc-900 flex items-center justify-center text-[8px] text-zinc-500 font-bold">M</div>
+                      <div class="w-6 h-6 rounded-full bg-zinc-800 border border-zinc-900 flex items-center justify-center text-[8px] text-zinc-500 font-bold">A</div>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">Cartões aceites</span>
+                 </div>
+
+                 <button 
+                   (click)="processPayment()"
+                   [disabled]="isProcessingPayment()"
+                   class="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/25 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group relative overflow-hidden"
+                 >
+                   <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                   <span class="relative flex items-center gap-2">
+                     @if (isProcessingPayment()) {
+                       <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                       </svg>
+                       A processar...
+                     } @else {
+                       Pagar {{ item.price }}
+                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                         <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                       </svg>
+                     }
+                   </span>
+                 </button>
+                 
+                 <p class="text-[10px] text-center text-zinc-500 mt-4 flex items-center justify-center gap-1">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 text-zinc-400">
+                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13.5a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V4.5z" clip-rule="evenodd" />
+                   </svg>
+                   Garantia de cancelamento a qualquer momento
+                 </p>
+               </div>
+             </div>
+           }
+        </div>
+
+    </div>
+  }
+
+  <!-- SQL SETUP MODAL -->
+  @if (showSqlModal()) {
+    <div class="fixed inset-0 z-[60] flex items-center justify-center p-4">
+      <!-- Backdrop -->
+      <div class="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity" (click)="toggleSqlModal()"></div>
+
+      <div class="relative w-full max-w-2xl bg-zinc-900 border border-zinc-700 rounded-xl shadow-2xl p-6 animate-in fade-in zoom-in duration-300">
+        
+        <div class="flex items-center justify-between mb-4">
+           <h3 class="text-xl font-bold text-white flex items-center gap-2">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-indigo-500">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+             </svg>
+             Configuração da Base de Dados
+           </h3>
+           <button (click)="toggleSqlModal()" class="text-zinc-500 hover:text-white">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+             </svg>
+           </button>
+        </div>
+
+        <p class="text-zinc-400 mb-4 text-sm">
+          O seu projeto no Supabase precisa destas tabelas para funcionar corretamente. 
+          Copie o código abaixo e execute-o no <strong>SQL Editor</strong> do painel do Supabase.
+        </p>
+
+        <div class="relative group">
+          <pre class="bg-zinc-950 border border-zinc-800 rounded-lg p-4 text-xs font-mono text-green-400 overflow-auto max-h-64 whitespace-pre-wrap select-all scrollbar-thin scrollbar-thumb-zinc-700">{{ dbSetupSql }}</pre>
+          
+          <button 
+            (click)="copySqlToClipboard()"
+            class="absolute top-2 right-2 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            Copiar SQL
+          </button>
+        </div>
+
+        <div class="mt-6 flex justify-end">
+          <button (click)="toggleSqlModal()" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded-lg text-sm font-medium transition-colors">
+            Fechar
+          </button>
+        </div>
+
+      </div>
+    </div>
+  }
+
+</div>
